@@ -37,11 +37,11 @@ class Github(object):
 
         from_date = datetime.date.today()
         if self.settings.get("from_date"):
-            from_date = datetime.datetime.strptime(self.settings["from_date"], "%Y-%m-%dT%H:%M:%SZ")
+            from_date = datetime.datetime.strptime(self.settings["from_date"], "%Y-%m-%dT%H:%M:%SZ").date()
 
         to_date = from_date + datetime.timedelta(days=1)
         if self.settings.get("to_date"):
-            to_date = datetime.datetime.strptime(self.settings["to_date"], "%Y-%m-%dT%H:%M:%SZ")
+            to_date = datetime.datetime.strptime(self.settings["to_date"], "%Y-%m-%dT%H:%M:%SZ").date()
 
         for event in resp.json():
             created_date = datetime.datetime.strptime(event["created_at"], "%Y-%m-%dT%H:%M:%SZ").date()

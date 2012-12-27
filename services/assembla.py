@@ -28,11 +28,11 @@ class Assembla(object):
 
         from_date = datetime.date.today()
         if self.settings.get("from_date"):
-            from_date = datetime.datetime.strptime(self.settings["from_date"], "%Y-%m-%dT%H:%M:%SZ")
+            from_date = datetime.datetime.strptime(self.settings["from_date"], "%Y-%m-%dT%H:%M:%SZ").date()
 
         to_date = from_date + datetime.timedelta(days=1)
         if self.settings.get("to_date"):
-            to_date = datetime.datetime.strptime(self.settings["to_date"], "%Y-%m-%dT%H:%M:%SZ")
+            to_date = datetime.datetime.strptime(self.settings["to_date"], "%Y-%m-%dT%H:%M:%SZ").date()
 
         root = ET.fromstring(resp.text)
         for event in root.findall("event"):
