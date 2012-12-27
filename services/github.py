@@ -43,7 +43,7 @@ class Github(object):
         if self.settings.get("to_date"):
             to_date = datetime.datetime.strptime(self.settings["to_date"], "%Y-%m-%dT%H:%M:%SZ")
 
-        for event in resp.json:
+        for event in resp.json():
             created_date = datetime.datetime.strptime(event["created_at"], "%Y-%m-%dT%H:%M:%SZ").date()
             if created_date > to_date:
                 continue
