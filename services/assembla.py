@@ -17,6 +17,8 @@ class Assembla(object):
         resp = requests.get(self.assembla_user_url.render(),
                             auth=requests.auth.HTTPBasicAuth(self.username, self.password),
                             headers={'Accept': 'application/xml', 'Content-Type': 'application/xml'})
+        if not resp.text.strip():
+            return stream
         root = ET.fromstring(resp.text)
         user_id = root.find("id").text
         resp = requests.get(url, auth=requests.auth.HTTPBasicAuth(self.username, self.password),
