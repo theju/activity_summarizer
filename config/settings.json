@@ -1,0 +1,15 @@
+{
+    "from_date": "",
+    "to_date": "",
+
+    "email": {
+	"host": "",
+	"port": 25,
+	"use_tls": false,
+	"username": "",
+	"password": "",
+	"from": "",
+	"to": [],
+	"subject": ""
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "github": {
+	"username": "",
+	"token": "",
+	"url_template": "https://api.github.com/users/{{ username }}/events?token={{ token }}"
+    },
+    "assembla": {
+	"username": "",
+	"password": "",
+	"url_template": "https://www.assembla.com/activity"
+    }
+}
