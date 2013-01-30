@@ -2,7 +2,7 @@
     "github": {
 	"username": "",
 	"token": "",
-	"url_template": "https://api.github.com/users/{{ username }}/events?token={{ token }}"
+	"url_template": "https://api.github.com/users/{{ username }}/events?access_token={{ token }}"
     },
     "assembla": {
 	"username": "",
