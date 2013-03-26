@@ -51,5 +51,5 @@ class Github(object):
                 continue
             description = self._render_event(event)
             if description:
-                stream.append((created_date, description))
+                stream.append((created_date, description[:80]))
         return stream

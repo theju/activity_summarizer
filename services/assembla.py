@@ -45,5 +45,5 @@ class Assembla(object):
             if created_date < from_date:
                 continue
             description = "* %s %s" % (event.find("operation").text, event.find("title").text)
-            stream.append((created_date, description))
+            stream.append((created_date, description[:80]))
         return stream
